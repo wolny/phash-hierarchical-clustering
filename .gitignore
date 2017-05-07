@@ -1,0 +1,10 @@
+# Intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# sbt
+target
+*.class
+out
