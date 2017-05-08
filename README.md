@@ -21,3 +21,9 @@ Run the application from the `.jar` with the `java -jar` command, e.g.:
 
 where `<imageDirectory>` is the folder where the images are stored (use as many images as possible for better results).
 
+## Sample results
+
+- Sample clusters from a dataset consisting of 5K images with Apple logo
+![Cluster 1](https://raw.github.com/wolny/phash-hierarchical-clustering/master/samples/cluster1.png)
+![Cluster 2](https://raw.github.com/wolny/phash-hierarchical-clustering/master/samples/cluster2.png)
+![Cluster 3](https://raw.github.com/wolny/phash-hierarchical-clustering/master/samples/cluster3.png)
