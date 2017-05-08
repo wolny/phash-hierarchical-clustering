@@ -6,7 +6,7 @@ First, [Perceptual Hashing](http://www.phash.org/) is used to map the images to 
 [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) as a distance measure is used to group similar
 binary vectors.
 
-Note: we use a low hard-coded `cutHight` value of `2.0` in order to cut the dendrogram tree into *small* clusters with 
+Note: we use a low hard-coded `cutHight` value of `8.0` in order to cut the dendrogram tree into *small* clusters with 
 low number of outliers. You might experiment with different values of `cutHeight` in the 
 [HCluster](https://github.com/wolny/phash-hierarchical-clustering/blob/master/src/main/scala/com/brandwatch/HCluster.scala)
 depending on your dataset size and required 'quality' of the clustering.

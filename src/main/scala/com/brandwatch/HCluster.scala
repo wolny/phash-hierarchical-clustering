@@ -10,7 +10,7 @@ import smile.util._
 import scala.collection.mutable.{HashMap, MultiMap, Set}
 
 object HCluster {
-  val cutHeight = 2.0
+  val cutHeight = 8.0
 
   def loadData(dir: File): Array[Image] = {
     println("Loading dataset from %s ...".format(dir.getAbsolutePath))
