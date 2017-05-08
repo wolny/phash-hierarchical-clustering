@@ -10,6 +10,8 @@ import smile.util._
 import scala.collection.mutable.{HashMap, MultiMap, Set}
 
 object HCluster {
+  val cutHeight = 2.0
+
   def loadData(dir: File): Array[Image] = {
     println("Loading dataset from %s ...".format(dir.getAbsolutePath))
 
@@ -49,7 +51,7 @@ object HCluster {
     hclust(proximityMatrix, linkage)
   }
 
-  def groupClusters(dataSet: Array[Image], clustering: HierarchicalClustering, cutHeight: Double): Array[Set[String]] = {
+  def getClusters(dataSet: Array[Image], clustering: HierarchicalClustering, cutHeight: Double): Array[Set[String]] = {
     val mm = new HashMap[Int, Set[String]] with MultiMap[Int, String]
 
     clustering.partition(cutHeight)
@@ -75,7 +77,7 @@ object HCluster {
     val hcComplete = train(dataSet, linkage)
 
     // use low value for the 'cutHeight' cause lager cluster will have low quality (many outliers)
-    groupClusters(dataSet, hcComplete, 2.0)
+    getClusters(dataSet, hcComplete, cutHeight)
   }
 
   private def imageFromFile(f: File): Option[Image] = {
