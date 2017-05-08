@@ -110,18 +110,22 @@ object HCluster {
     clustering
   }
 
-  //  def main(args: Array[String]): Unit = {
-  //    if (args.isEmpty) {
-  //      println("Usage: scala HCluster <imageDirectory>")
-  //      System.exit(1)
-  //    }
-  //
-  //    // val agglomerationMethods = Array("single", "complete", "ward")
-  //
-  //    val imageDir = new File(args(0))
-  //
-  //    computeClusters(imageDir, "complete").foreach(println(_))
-  //  }
+//    def main(args: Array[String]): Unit = {
+//      if (args.isEmpty) {
+//        println("Usage: scala HCluster <imageDirectory>")
+//        System.exit(1)
+//      }
+//
+//      // val agglomerationMethods = Array("single", "complete", "ward")
+//
+//      val imageDir = new File(args(0))
+//
+//      val dataSet = loadData(imageDir)
+//
+//      val hcComplete = train(dataSet, "complete")
+//
+//      dendrogram(hcComplete)
+//    }
 
   case class Image(name: String, pHash: String)
 
