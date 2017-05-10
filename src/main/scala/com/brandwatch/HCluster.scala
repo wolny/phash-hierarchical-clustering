@@ -27,11 +27,13 @@ object HCluster {
       Serialization.write(images, new FileWriter(dataSetJson)).flush()
     }
 
+    // if 'dataset.json' is present return deserialize and return
+    // otherwise compute perceptual hash for every image in a given directory
     if (dataSetJson.exists) {
       deserialize(dataSetJson)
     } else {
       val images: Array[Image] = dir.listFiles
-        .filter(f => f.isFile && f.getName.endsWith("jpg"))
+        .filter(_.isFile)
         .flatMap(imageFromFile)
 
       serialize(images)
@@ -110,22 +112,22 @@ object HCluster {
     clustering
   }
 
-//    def main(args: Array[String]): Unit = {
-//      if (args.isEmpty) {
-//        println("Usage: scala HCluster <imageDirectory>")
-//        System.exit(1)
-//      }
-//
-//      // val agglomerationMethods = Array("single", "complete", "ward")
-//
-//      val imageDir = new File(args(0))
-//
-//      val dataSet = loadData(imageDir)
-//
-//      val hcComplete = train(dataSet, "complete")
-//
-//      dendrogram(hcComplete)
-//    }
+  //    def main(args: Array[String]): Unit = {
+  //      if (args.isEmpty) {
+  //        println("Usage: scala HCluster <imageDirectory>")
+  //        System.exit(1)
+  //      }
+  //
+  //      // val agglomerationMethods = Array("single", "complete", "ward")
+  //
+  //      val imageDir = new File(args(0))
+  //
+  //      val dataSet = loadData(imageDir)
+  //
+  //      val hcComplete = train(dataSet, "complete")
+  //
+  //      dendrogram(hcComplete)
+  //    }
 
   case class Image(name: String, pHash: String)
 

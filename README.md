@@ -13,11 +13,12 @@ depending on your dataset size and required 'quality' of the clustering.
 
 ## Running
 
-Build the project with `sbt assembly`. This will generate a `phash-hierarchical-clustering-${version}.jar` uberjar 
-file in the `target/scala-<scalaVersion>` subdirectory (where `${version}` is the current version defined in `build.sbt`).
+Build the project with `sbt assembly`. This will generate a `phash-hierarchical-clustering-assembly-<version>.jar` uberjar 
+file in the `target/scala-<scalaVersion>` subdirectory (where `<version>` is the current version defined in `build.sbt`).
 
 Run the application from the `.jar` with the `java -jar` command, e.g.:
-- `java -jar target/scala-2.12/phash-hierarchical-clustering-assembly-1.0.jar <imageDirectory>`
+- `java -jar target/scala-2.12/phash-hierarchical-clustering-assembly-1.0.jar <imageDirectory>` 
+this might take a while the 1st time, since the app needs to compute the phash value for every image in the `<imageDirectory>`
 
 where `<imageDirectory>` is the folder where the images are stored (use as many images as possible for better results).
 
