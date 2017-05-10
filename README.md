@@ -20,7 +20,7 @@ Run the application from the `.jar` with the `java -jar` command, e.g.:
 - `java -jar target/scala-2.12/phash-hierarchical-clustering-assembly-1.0.jar <imageDirectory>` 
 this might take a while the 1st time, since the app needs to compute the phash value for every image in the `<imageDirectory>`
 
-where `<imageDirectory>` is the folder where the images are stored (use as many images as possible for better results).
+`<imageDirectory>` is the folder where the images are stored (use as many images as possible for better results).
 
 ## Sample results
 
